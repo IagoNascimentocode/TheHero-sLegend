@@ -1,8 +1,10 @@
 import 'reflect-metadata';
+import 'express-async-errors'
 import express, { NextFunction, Request, Response } from 'express';
 import { router } from './routes';
+import '../src/modules/container';
 
-import './database'
+import './database';
 
 const app = express();
 
@@ -15,7 +17,9 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
   return response.status(400).json({ error: err.message })
  }
 
- return response.status(500).json({ status: "error", messsage: "Internal Server Error" })
+ return response.status(500).json({ status: "error", message: "Internal Server Error" })
+
+
 })
 
 app.listen(3721, () => console.log("Server Run"));

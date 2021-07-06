@@ -17,7 +17,7 @@ class User {
  password: string;
 
  @Column()
- isAdmin: boolean;
+ admin: boolean;
 
  @Column()
  nationality: string;
