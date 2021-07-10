@@ -13,6 +13,6 @@ container.registerSingleton<IUsersRepository>(
 );
 
 container.registerSingleton<IHeroesRepository>(
- "HeroresRepository",
+ "HeroesRepository",
  HeroesRepository
 )
