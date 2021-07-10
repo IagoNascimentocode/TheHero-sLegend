@@ -1,7 +1,7 @@
 import { inject, injectable } from "tsyringe";
-import { IUsersRepository } from "../../accounts/repositories/IUsersRepository";
-import { ICreateHeroesDTO } from "../dtos/ICreateHeroesDTO";
-import { IHeroesRepository } from "../repositories/IHeroesRepository";
+import { IUsersRepository } from "../../../accounts/repositories/IUsersRepository";
+import { ICreateHeroesDTO } from "../../dtos/ICreateHeroesDTO";
+import { IHeroesRepository } from "../../repositories/IHeroesRepository";
 
 @injectable()
 class CreateHeroesUseCase {

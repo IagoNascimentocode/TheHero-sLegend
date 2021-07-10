@@ -11,6 +11,7 @@ class HeroesRepository implements IHeroesRepository {
  constructor() {
   this.repository = getRepository(Hero)
  }
+
  async create({ user_id, name, type, life, damage, strength, armor, agility, intelligence, movementSpeed }: ICreateHeroesDTO): Promise<void> {
 
   const hero = this.repository.create({ user_id, name, type, life, damage, strength, armor, agility, intelligence, movementSpeed })
@@ -18,7 +19,11 @@ class HeroesRepository implements IHeroesRepository {
   await this.repository.save(hero)
  }
 
+ async findByID(id: string): Promise<Hero> {
+  const hero = await this.repository.findOne(id)
 
+  return hero
+ }
 
 }
 export { HeroesRepository }
