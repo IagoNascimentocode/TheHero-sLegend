@@ -20,10 +20,23 @@ class HeroesRepository implements IHeroesRepository {
  }
 
  async findByID(id: string): Promise<Hero> {
+
   const hero = await this.repository.findOne(id)
 
   return hero
  }
+
+ async listHeroAndUserByUserID(user_id: string): Promise<Hero[]> {
+
+  const hero = await this.repository.find({
+   where: { user_id },
+   relations: ["user"]
+  })
+
+  return hero
+ }
+
+
 
 }
 export { HeroesRepository }
