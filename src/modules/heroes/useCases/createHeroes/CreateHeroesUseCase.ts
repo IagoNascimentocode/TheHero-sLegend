@@ -21,10 +21,11 @@ class CreateHeroesUseCase {
    throw Error("Users is not exists!")
   }
 
-  await this.heroesRepository.create({ user_id, name, type, life, damage, strength, armor, agility, intelligence, movementSpeed })
+  const hero = await this.heroesRepository.create({ user_id, name, type, life, damage, strength, armor, agility, intelligence, movementSpeed })
+
+  await this.usersRepository.updateHero(user_id, hero.id)
 
  }
-
 }
 
 export { CreateHeroesUseCase }

@@ -4,6 +4,9 @@ import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { User } from "../entities/User";
 
 
+
+
+
 class UsersRepository implements IUsersRepository {
 
   private repository: Repository<User>;
@@ -49,10 +52,20 @@ class UsersRepository implements IUsersRepository {
       .execute()
   }
 
+  async updateHero(user_id: string, hero_id: string): Promise<void> {
+    await this.repository.createQueryBuilder()
+      .update()
+      .set({ hero_id })
+      .where("id = :user_id")
+      .setParameters({ user_id })
+      .execute()
+  }
+
   async deleteUser(id: string): Promise<void> {
 
     await this.repository.delete(id)
   }
+
 }
 
 export { UsersRepository }

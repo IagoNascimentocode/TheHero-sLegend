@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, PrimaryColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+import { Hero } from '../../heroes/entities/Hero';
 
 @Entity("users")
 class User {
@@ -30,6 +31,13 @@ class User {
 
  @CreateDateColumn()
  birthDate: Date
+
+ @OneToMany(() => Hero, hero => hero.user)
+ @JoinColumn({ name: "hero_id" })
+ hero: Hero[];
+
+ @Column()
+ hero_id: string;
 
  @CreateDateColumn()
  created_at: Date
