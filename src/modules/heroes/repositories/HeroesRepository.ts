@@ -38,6 +38,13 @@ class HeroesRepository implements IHeroesRepository {
   return hero
  }
 
+ async listAllHeroes(): Promise<Hero[]> {
+
+  const heroes = await this.repository.find()
+
+  return heroes
+ }
+
  async deleteHero(id: string): Promise<void> {
 
   await this.repository.delete(id)
