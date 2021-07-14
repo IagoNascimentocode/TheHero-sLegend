@@ -1,7 +1,7 @@
-import { getRepository, Repository } from "typeorm";
+import { getRepository, QueryBuilder, Repository } from "typeorm";
 import { IHeroesRepository } from "./IHeroesRepository";
-import { Hero } from "../entities/Hero";
 import { ICreateHeroesDTO } from "../dtos/ICreateHeroesDTO";
+import { Hero } from "../entities/Hero";
 
 
 class HeroesRepository implements IHeroesRepository {
@@ -38,7 +38,9 @@ class HeroesRepository implements IHeroesRepository {
   return hero
  }
 
+ async deleteHero(id: string): Promise<void> {
 
-
+  await this.repository.delete(id)
+ }
 }
 export { HeroesRepository }

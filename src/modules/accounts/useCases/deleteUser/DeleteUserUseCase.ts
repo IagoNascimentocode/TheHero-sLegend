@@ -9,14 +9,14 @@ class DeleteUserUseCase {
   private usersRepository: IUsersRepository
  ) { }
 
- async execute(_id: string) {
-  const id = this.usersRepository.findByID(_id)
+ async execute(id: string) {
+  const hero = this.usersRepository.findByID(id)
 
-  if (!id) {
+  if (!hero) {
    throw Error("User is not exists!")
   }
 
-  await this.usersRepository.deleteUser(_id)
+  await this.usersRepository.deleteUser(id)
  }
 
 }
