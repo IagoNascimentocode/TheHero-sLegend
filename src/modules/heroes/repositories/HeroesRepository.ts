@@ -6,7 +6,7 @@ import { Hero } from "../entities/Hero";
 
 class HeroesRepository implements IHeroesRepository {
 
- private repository: Repository<Hero>;
+ repository: Repository<Hero>;
 
  constructor() {
   this.repository = getRepository(Hero)
