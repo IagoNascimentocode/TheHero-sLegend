@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, PrimaryColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 import { Hero } from '../../heroes/entities/Hero';
 
@@ -42,7 +42,7 @@ class User {
  @CreateDateColumn()
  created_at: Date
 
- @CreateDateColumn()
+ @UpdateDateColumn()
  updated_at: Date
 
  constructor() {
