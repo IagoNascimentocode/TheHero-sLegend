@@ -36,6 +36,9 @@ class Hero {
  movementSpeed: number;
 
  @Column()
+ cash: number;
+
+ @Column()
  user_id: string;
 
  @ManyToOne(() => User)

@@ -49,6 +49,11 @@ export class CreateHeroes1625867654010 implements MigrationInterface {
                         type: "numeric"
                     },
                     {
+                        name: "cash",
+                        type: "numeric",
+                        isNullable: true
+                    },
+                    {
                         name: "user_id",
                         type: "uuid",
                     },
