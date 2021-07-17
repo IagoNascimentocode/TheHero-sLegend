@@ -49,5 +49,16 @@ class HeroesRepository implements IHeroesRepository {
 
   await this.repository.delete(id)
  }
+
+ async addCash(hero_id: string, cash: number): Promise<void> {
+
+  await this.repository.createQueryBuilder()
+   .update()
+   .set({ cash })
+   .where("id = :hero_id")
+   .setParameters({ hero_id })
+   .execute()
+
+ }
 }
 export { HeroesRepository }

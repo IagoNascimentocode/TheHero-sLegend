@@ -7,5 +7,6 @@ interface IHeroesRepository {
  listHeroAndUserByUserID(user_id: string): Promise<Hero[]>;
  deleteHero(id: string): Promise<void>;
  listAllHeroes(): Promise<Hero[]>;
+ addCash(hero_id: string, cash: number): Promise<void>;
 }
 export { IHeroesRepository }
