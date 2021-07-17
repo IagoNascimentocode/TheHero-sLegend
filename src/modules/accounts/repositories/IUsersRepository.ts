@@ -1,4 +1,3 @@
-import { Hero } from '../../heroes/entities/Hero';
 import { ICreateUserDTO } from '../dtos/ICreateUserDTO';
 import { User } from '../entities/User';
 

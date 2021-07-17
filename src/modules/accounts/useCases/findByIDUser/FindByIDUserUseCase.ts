@@ -3,7 +3,7 @@ import { User } from "../../entities/User";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 @injectable()
-class ListByIDUserUseCase {
+class FindByIDUserUseCase {
 
  constructor(
   @inject("UsersRepository")
@@ -11,11 +11,14 @@ class ListByIDUserUseCase {
  ) { }
 
  async execute(id: string): Promise<User> {
-
   const user = await this.usersRepository.findByID(id)
+
+  if (!user) {
+   throw Error("User is not exists!")
+  }
 
   return user
  }
 }
 
-export { ListByIDUserUseCase }
+export { FindByIDUserUseCase }
