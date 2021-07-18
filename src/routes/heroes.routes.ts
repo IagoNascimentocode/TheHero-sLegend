@@ -6,10 +6,6 @@ import { FindByIDHeroController } from "../modules/heroes/useCases/findByIDHero/
 import { ListAllHeroesController } from "../modules/heroes/useCases/listAllHeroes/ListAllHeroesController";
 import { ListHeroAndUserByUserIDController } from "../modules/heroes/useCases/listHeroAndUserByUserID/ListHeroAndUserByUserIDController";
 
-
-
-
-
 const heroesRoutes = Router();
 
 const createHeroesController = new CreateHeroesController();
@@ -19,7 +15,7 @@ const deleteHeroController = new DeleteHeroController();
 const listAllHeroesController = new ListAllHeroesController();
 const addCashController = new AddCashController()
 
-heroesRoutes.post('/:id', createHeroesController.handle)
+heroesRoutes.post('/', createHeroesController.handle)
 heroesRoutes.get('/listAll', listAllHeroesController.handle)
 heroesRoutes.get('/findByID/:id', findByIDHeroController.handle)
 heroesRoutes.get('/listHeroAndUser/:id', listHeroAndUserByUserIDController.handle)

@@ -5,15 +5,13 @@ import { CreateHeroesUseCase } from "./CreateHeroesUseCase";
 class CreateHeroesController {
  async handle(request: Request, response: Response): Promise<Response> {
 
-  const { id } = request.params;
-
   const { name, type, life, damage, strength, armor, agility, intelligence, movementSpeed } = request.body;
 
   const createHeroesUseCase = container.resolve(CreateHeroesUseCase)
 
-  await createHeroesUseCase.execute({ user_id: id, name, type, life, damage, strength, armor, agility, intelligence, movementSpeed })
+  await createHeroesUseCase.execute({ name, type, life, damage, strength, armor, agility, intelligence, movementSpeed })
 
-  return response.status(201).send()
+  return response.status(200).send()
  }
 }
 export { CreateHeroesController }

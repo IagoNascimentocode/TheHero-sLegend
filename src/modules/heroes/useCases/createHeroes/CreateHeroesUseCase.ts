@@ -13,17 +13,12 @@ class CreateHeroesUseCase {
   private usersRepository: IUsersRepository
  ) { }
 
- async execute({ user_id, name, type, life, damage, strength, armor, agility, intelligence, movementSpeed }: ICreateHeroesDTO): Promise<void> {
+ async execute({ name, type, life, damage, strength, armor, agility, intelligence, movementSpeed }: ICreateHeroesDTO): Promise<void> {
 
-  const user = this.usersRepository.findByID(user_id)
 
-  if (!user) {
-   throw Error("Users is not exists!")
-  }
-
-  const hero = await this.heroesRepository.create({ user_id, name, type, life, damage, strength, armor, agility, intelligence, movementSpeed })
-
-  await this.usersRepository.updateHero(user_id, hero.id)
+  await this.heroesRepository.create({
+   name, type, life, damage, strength, armor, agility, intelligence, movementSpeed
+  })
 
  }
 }
