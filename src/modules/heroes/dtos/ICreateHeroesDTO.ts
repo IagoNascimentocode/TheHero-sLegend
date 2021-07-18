@@ -8,6 +8,5 @@ interface ICreateHeroesDTO {
  agility: number;
  intelligence: number;
  movementSpeed: number;
- user_id: string;
 }
 export { ICreateHeroesDTO }

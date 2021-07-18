@@ -49,7 +49,7 @@ class UsersRepository implements IUsersRepository {
       .execute()
   }
 
-  async updateHero(user_id: string, hero_id: string): Promise<void> {
+  async selectHero(user_id: string, hero_id: string): Promise<void> {
     await this.repository.createQueryBuilder()
       .update()
       .set({ hero_id })

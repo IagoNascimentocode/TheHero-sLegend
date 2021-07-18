@@ -56,6 +56,7 @@ export class CreateHeroes1625867654010 implements MigrationInterface {
                     {
                         name: "user_id",
                         type: "uuid",
+                        isNullable: true
                     },
                     {
                         name: "created_at",

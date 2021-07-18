@@ -28,6 +28,12 @@
 [   ] - Only authenticated users can update data.
 
 ---
+### Select Hero : 
+[ x ] - Should be able to add a hero to a user and user to a hero.<br>
+[ x ] - Should not be able to add the same hero to more than one user.<br>
+[   ] - Only authenticated users can select Hero.
+
+---
 ### Delete User :
 [ x ] - Should be able delete User.<br>
 [   ] - Only authenticated users can list all users. 
