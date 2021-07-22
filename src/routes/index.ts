@@ -1,10 +1,12 @@
 import { Router } from 'express';
-import { heroesRoutes } from './heroes.routes';
 import { usersRoutes } from './users.routes';
+import { heroesRoutes } from './heroes.routes';
+import { itemsRoutes } from './items.routes';
 
 const router = Router();
 
 router.use('/users', usersRoutes);
-router.use('/heroes', heroesRoutes)
+router.use('/heroes', heroesRoutes);
+router.use('/items', itemsRoutes);
 
 export { router };

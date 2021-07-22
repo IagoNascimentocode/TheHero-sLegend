@@ -23,10 +23,13 @@ class Sword {
  updated_at: Date;
 
  constructor() {
+
   if (!this.id) {
    this.id = uuid();
+
   }
  }
+
 }
 
 export { Sword }
