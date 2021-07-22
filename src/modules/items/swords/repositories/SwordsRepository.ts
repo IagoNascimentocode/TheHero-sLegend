@@ -24,5 +24,9 @@ class SwordsRepository implements ISwordsRepository {
   return swords
  }
 
+ async deleteSword(id: string): Promise<void> {
+  await this.repository.delete(id)
+ }
+
 }
 export { SwordsRepository }
