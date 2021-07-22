@@ -11,7 +11,7 @@ class CreateHeroesController {
 
   await createHeroesUseCase.execute({ name, type, life, damage, strength, armor, agility, intelligence, movementSpeed })
 
-  return response.status(200).send()
+  return response.status(201).send()
  }
 }
 export { CreateHeroesController }
