@@ -18,5 +18,11 @@ class SwordsRepository implements ISwordsRepository {
   await this.repository.save(sword)
  }
 
+ async listAll(): Promise<Sword[]> {
+  const swords = this.repository.find()
+
+  return swords
+ }
+
 }
 export { SwordsRepository }
