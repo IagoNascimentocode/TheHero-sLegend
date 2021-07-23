@@ -9,6 +9,9 @@ import { HeroesRepository } from '../heroes/repositories/HeroesRepository';
 import { ISwordsRepository } from '../items/swords/repositories/ISwordsRepository';
 import { SwordsRepository } from '../items/swords/repositories/SwordsRepository';
 
+import { IArmorRepository } from '../items/armor/repositories/IArmorRepository';
+import { ArmorRepository } from '../items/armor/repositories/ArmorRepository';
+
 
 container.registerSingleton<IUsersRepository>(
  "UsersRepository",
@@ -23,4 +26,9 @@ container.registerSingleton<IHeroesRepository>(
 container.registerSingleton<ISwordsRepository>(
  "SwordsRepository",
  SwordsRepository
+)
+
+container.registerSingleton<IArmorRepository>(
+ "ArmorRepository",
+ ArmorRepository
 )

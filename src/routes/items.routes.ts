@@ -3,6 +3,7 @@ import { CreateSwordsController } from "../modules/items/swords/useCases/createS
 import { DeleteSwordController } from "../modules/items/swords/useCases/deleteSword/DeleteSwordController";
 import { ListAllSwordsController } from "../modules/items/swords/useCases/listAllSwords/ListAllSwordsController";
 
+import { CreateArmorController } from "../modules/items/armor/useCases/createArmor/CreateArmorController";
 
 
 const itemsRoutes = Router();
@@ -11,8 +12,12 @@ const createSwordsController = new CreateSwordsController();
 const listAllSwordsController = new ListAllSwordsController();
 const deleteSwordController = new DeleteSwordController();
 
-itemsRoutes.post('/', createSwordsController.handle)
-itemsRoutes.get('/listAll', listAllSwordsController.handle)
-itemsRoutes.delete('/delete', deleteSwordController.handle)
+itemsRoutes.post('/createSword', createSwordsController.handle)
+itemsRoutes.get('/listAllSword', listAllSwordsController.handle)
+itemsRoutes.delete('/deleteSword', deleteSwordController.handle)
+
+const createArmorController = new CreateArmorController();
+
+itemsRoutes.post('/createArmor', createArmorController.handle)
 
 export { itemsRoutes }
