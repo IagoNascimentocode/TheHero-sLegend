@@ -71,3 +71,21 @@
  ### Delete Hero :
  [ x ] - Should be able Delete hero.<br> 
  [   ] - Only an authenticated admin user can delete hero.
+
+ ---
+<br><br>
+
+## <strong>Items</strong> 
+
+### Create Items :
+ [ x ] - Should be able to save a items in the database.<br>
+ [   ] - Only an authenticated admin user can create a new item.
+
+---
+ ### List Items : 
+ [ x ] - Should be possible to list all the items.
+
+---
+ ### Delete Items:
+ [ x ] - Should be possible delete items.<br>
+ [   ] - Only an authenticated admin user can delete a new item. 
