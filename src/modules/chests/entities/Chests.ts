@@ -1,4 +1,5 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { v4 as uuid } from "uuid";
 import { User } from "../../accounts/entities/User";
 import { Armor } from "../../items/armor/entities/Armor";
 import { Sword } from "../../items/swords/entities/Sword";
@@ -29,6 +30,11 @@ class Chests {
 
  @UpdateDateColumn()
  updated_at: Date;
-}
 
+ constructor() {
+  if (!this.id) {
+   this.id = uuid()
+  }
+ }
+}
 export { Chests }

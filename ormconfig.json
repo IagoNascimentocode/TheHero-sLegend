@@ -9,7 +9,7 @@
   "src/modules/heroes/entities/*.ts",
   "src/modules/items/swords/entities/*.ts",
   "src/modules/items/armor/entities/*.ts",
-  "src/modules/chests/entities/*ts"
+  "src/modules/chests/entities/*.ts"
  ],
  "cli": {
   "migrationsDir": "src/database/migrations"

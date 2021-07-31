@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, PrimaryColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+import { Chests } from '../../chests/entities/Chests';
 import { Hero } from '../../heroes/entities/Hero';
 
 @Entity("users")
@@ -38,6 +39,13 @@ class User {
 
  @Column()
  hero_id: string;
+
+ @OneToOne(() => Chests)
+ @JoinColumn({ name: "chests_id" })
+ chests: Chests;
+
+ @Column()
+ chests_id: string;
 
  @CreateDateColumn()
  created_at: Date;

@@ -34,7 +34,7 @@ export class CreateArmor1626988561831 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()"
                     }
-                ]
+                ],
             })
         )
     }

@@ -51,6 +51,11 @@ export class CreateUsers1625440813051 implements MigrationInterface {
                         isNullable: true
                     },
                     {
+                        name: "chests_id",
+                        type: "uuid",
+                        isNullable: true
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
@@ -67,6 +72,14 @@ export class CreateUsers1625440813051 implements MigrationInterface {
                         referencedTableName: "heroes",
                         referencedColumnNames: ["id"],
                         columnNames: ["hero_id"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL"
+                    },
+                    {
+                        name: "FKChests",
+                        referencedTableName: "chests",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["chests_id"],
                         onDelete: "SET NULL",
                         onUpdate: "SET NULL"
                     }

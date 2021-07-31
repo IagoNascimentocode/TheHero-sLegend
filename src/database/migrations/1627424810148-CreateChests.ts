@@ -33,7 +33,7 @@ export class CreateChests1627424810148 implements MigrationInterface {
                         isNullable: true
                     },
                     {
-                        name: "create_at",
+                        name: "created_at",
                         type: "timestamp",
                         default: "now()"
                     },

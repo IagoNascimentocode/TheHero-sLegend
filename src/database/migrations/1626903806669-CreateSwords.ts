@@ -34,7 +34,7 @@ export class CreateSwords1626903806669 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()"
                     }
-                ]
+                ],
             })
         )
     }
