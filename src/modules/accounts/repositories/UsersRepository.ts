@@ -1,4 +1,4 @@
-import { getRepository, Repository } from "typeorm";
+import { createQueryBuilder, getRepository, Repository } from "typeorm";
 import { IUsersRepository } from "./IUsersRepository";
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { User } from "../entities/User";
@@ -49,6 +49,15 @@ class UsersRepository implements IUsersRepository {
       .set({ name, city, address, nationality })
       .where("id = :id")
       .setParameters({ id })
+      .execute()
+  }
+
+  async updateChests_id(user_id: string, chests_id: string): Promise<void> {
+    await this.repository.createQueryBuilder()
+      .update()
+      .set({ chests_id })
+      .where("id = :user_id")
+      .setParameters({ user_id })
       .execute()
   }
 

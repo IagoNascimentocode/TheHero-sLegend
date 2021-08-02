@@ -8,9 +8,12 @@
 <br>
 
 ### Create User :
-[ x ] -  Should be able to save a user in the database.<br>
+[ x ] - Should be able to save a user in the database.<br>
 [ x ] - User password must be encrypted.<br>
-[ x ] - Should not be able to save a user with an email already registered.
+[ x ] - Should not be able to save a user with an email already registered.<br>
+[ x ] - Should be able create one chest.<br>
+[ x ] - The chest must receive the id of the created user and the user must receive the id of the chest.<br>
+
 
 ---
 ### List All Users :

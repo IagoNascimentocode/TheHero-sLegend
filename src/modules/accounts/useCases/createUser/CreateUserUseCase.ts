@@ -11,6 +11,8 @@ class CreateUserUseCase {
  constructor(
   @inject("UsersRepository")
   private usersRepository: IUsersRepository,
+  @inject("ChestsRepository")
+  private chestsRepository: IChestsRepository
  ) { }
 
  async execute({ name, email, password, birthDate, nationality, city, address, admin = false }: ICreateUserDTO) {
@@ -27,8 +29,10 @@ class CreateUserUseCase {
    name, email, password: encryptedPassword, birthDate, nationality, city, address, admin,
   })
 
-  return user
+  const chests = await this.chestsRepository.create({ user_id: user.id })
 
+
+  this.usersRepository.updateChests_id(user.id, chests.id)
  }
 
 }

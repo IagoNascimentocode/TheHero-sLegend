@@ -17,13 +17,22 @@ class Chests {
  @JoinColumn({ name: "user_id" })
  user: User;
 
+ @Column()
+ user_id: string
+
  @OneToMany(() => Sword, sword => sword.id)
  @JoinColumn({ name: "sword_id" })
  sword: Sword[];
 
+ @Column()
+ sword_id: string
+
  @OneToMany(() => Armor, armor => armor.id)
  @JoinColumn({ name: "armor_id" })
  armor: Armor[];
+
+ @Column()
+ armor_id: string
 
  @CreateDateColumn()
  created_at: Date;

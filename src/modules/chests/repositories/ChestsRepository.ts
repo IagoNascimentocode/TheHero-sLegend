@@ -5,20 +5,20 @@ import { IChestsRepository } from "./IChestsRepository";
 
 class ChestsRepository implements IChestsRepository {
 
- private repository: Repository<Chests>
+  private repository: Repository<Chests>
 
- constructor() {
-  this.repository = getRepository(Chests)
- }
+  constructor() {
+    this.repository = getRepository(Chests)
+  }
 
- async create({ user_id }: ICreateChestsDTO): Promise<void> {
+  async create({ user_id }: ICreateChestsDTO): Promise<Chests> {
 
-  const createChest = this.repository.create({ id: user_id })
+    const chest = this.repository.create({ user_id: user_id })
 
-  await this.repository.save(createChest)
+    await this.repository.save(chest)
 
- }
-
+    return chest
+  }
 }
 
 export { ChestsRepository }

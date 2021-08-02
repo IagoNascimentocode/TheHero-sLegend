@@ -20,7 +20,6 @@ export class CreateChests1627424810148 implements MigrationInterface {
                     {
                         name: "user_id",
                         type: "uuid",
-                        isNullable: true
                     },
                     {
                         name: "sword_id",
