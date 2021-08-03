@@ -5,6 +5,7 @@ import { ListAllUsersController } from "../modules/accounts/useCases/listAllUser
 import { FindByIdUserController } from "../modules/accounts/useCases/findByIDUser/FindByIDUserController";
 import { UpdateUserController } from "../modules/accounts/useCases/updateUser/UpdateUserController";
 import { SelectHeroController } from "../modules/accounts/useCases/selectHero/SelectHeroController";
+import { ListUserChestController } from "../modules/accounts/useCases/listUserChest/ListUserChestController";
 
 const usersRoutes = Router();
 
@@ -14,9 +15,11 @@ const findByIDUserController = new FindByIdUserController();
 const updateUserController = new UpdateUserController();
 const deleteUserController = new DeleteUserController();
 const selectHeroController = new SelectHeroController();
+const listUserChestController = new ListUserChestController();
 
 usersRoutes.post('/', createUserController.handle)
 usersRoutes.get('/list', listAllUsersController.handle)
+usersRoutes.get('/listChest/:id', listUserChestController.handle)
 usersRoutes.get('/find/:id', findByIDUserController.handle)
 usersRoutes.patch('/updateUser/:id', updateUserController.handle)
 usersRoutes.delete('/deleteUser/:id', deleteUserController.handle)

@@ -13,7 +13,7 @@ class DeleteUserUseCase {
   private heroesRepository: IHeroesRepository
  ) { }
 
- async execute(id: string) {
+ async execute(id: string): Promise<void> {
   const user = this.usersRepository.findByID(id)
 
   if (!user) {

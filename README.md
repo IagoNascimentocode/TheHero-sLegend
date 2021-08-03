@@ -20,6 +20,11 @@
 [ x ] - Should be able list all Users.<br>
 [   ] - Only authenticate admin users can list all users.
 
+### List User Chest :
+
+[ x ] - Should be able to list users and chests by passing the user id.<br>
+[   ] - Only authenticate admin users can list users chests.
+
 ---
 ### Find User By ID : 
 [ x ] - Should be able find the user by id.<br>

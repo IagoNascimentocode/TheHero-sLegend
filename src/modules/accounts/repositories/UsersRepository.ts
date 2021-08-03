@@ -43,6 +43,15 @@ class UsersRepository implements IUsersRepository {
     return all
   }
 
+  async listUserChest(user_id: string): Promise<User[]> {
+    const chest = await this.repository.find({
+      where: { id: user_id },
+      relations: ["chests"]
+    })
+
+    return chest
+  }
+
   async updateUser(id: string, name?: string, city?: string, address?: string, nationality?: string): Promise<void> {
     await this.repository.createQueryBuilder()
       .update()
