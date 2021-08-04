@@ -2,6 +2,7 @@ import { createQueryBuilder, getRepository, Repository } from "typeorm";
 import { IUsersRepository } from "./IUsersRepository";
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { User } from "../entities/User";
+import { response } from "express";
 
 class UsersRepository implements IUsersRepository {
 
@@ -41,6 +42,15 @@ class UsersRepository implements IUsersRepository {
     const all = this.repository.find()
 
     return all
+  }
+
+  async report(): Promise<User[]> {
+    const user = await this.repository.find({
+
+      relations: ["chests", "hero"]
+    })
+    console.log(user)
+    return user
   }
 
   async listUserChest(user_id: string): Promise<User[]> {
