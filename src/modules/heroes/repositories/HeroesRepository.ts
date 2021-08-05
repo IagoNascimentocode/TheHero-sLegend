@@ -68,5 +68,32 @@ class HeroesRepository implements IHeroesRepository {
 
     await this.repository.delete(id)
   }
+
+  async basicAttack(player_1: string, player_2: string): Promise<void> {
+    const player1 = await this.repository.findOne(player_1);
+    const player2 = await this.repository.findOne(player_2);
+
+
+    if (player1.movementSpeed >= player2.movementSpeed) {
+
+      player2.armor = player2.armor - player1.damage
+
+      if (player2.armor <= 0) {
+
+        player2.life = player2.life - player1.damage
+      }
+
+    } else {
+
+      player1.armor = player1.armor - player2.damage
+
+      if (player1.armor <= 0) {
+        player1.armor = player1.life - player2.damage
+
+      }
+
+    }
+    console.log(player2, player1)
+  }
 }
 export { HeroesRepository }

@@ -8,6 +8,8 @@ interface IHeroesRepository {
  deleteHero(id: string): Promise<void>;
  listAllHeroes(): Promise<Hero[]>;
  addCash(hero_id: string, cash: number): Promise<void>;
- setUserInHero(user_id: string, hero_id: string): Promise<void>
+ setUserInHero(user_id: string, hero_id: string): Promise<void>;
+
+ basicAttack(player_1: string, player_2: string): Promise<void>;
 }
 export { IHeroesRepository }
