@@ -42,6 +42,15 @@
 [   ] - Only authenticated users can select Hero.
 
 ---
+### Report_pdf :
+[ x ] - Must be able to generate a PDF file.<br>
+[ x ] - The user who made the request must have the option to print or download the file.
+- Example:
+![report](https://user-images.githubusercontent.com/62814416/128287515-748a68be-02bd-4032-a158-b77a53190dc9.png)
+
+[   ] - Only authentication admin users can request reports.
+
+---
 ### Delete User :
 [ x ] - Should be able delete User.<br>
 [   ] - Only authenticated users can list all users. 
