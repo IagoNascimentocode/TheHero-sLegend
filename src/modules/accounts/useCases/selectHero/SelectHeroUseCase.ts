@@ -1,5 +1,5 @@
 import { inject, injectable } from "tsyringe";
-import { Hero } from "../../../heroes/entities/Hero";
+import { Hero } from "../../../heroes/entities/hero";
 import { IHeroesRepository } from "../../../heroes/repositories/IHeroesRepository";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 

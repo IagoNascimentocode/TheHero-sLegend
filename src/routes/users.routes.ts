@@ -7,6 +7,8 @@ import { UpdateUserController } from "../modules/accounts/useCases/updateUser/Up
 import { SelectHeroController } from "../modules/accounts/useCases/selectHero/SelectHeroController";
 import { ListUserChestController } from "../modules/accounts/useCases/listUserChest/ListUserChestController";
 import { ReportController } from "../modules/accounts/useCases/report_pdf/ReportController";
+import { ensureAuthenticated } from "../middlewares/authenticated/EnsureAuthenticated";
+import { AuthenticateUserController } from "../modules/accounts/useCases/authenticateUser/AuthenticateUserController";
 
 const usersRoutes = Router();
 
@@ -18,13 +20,15 @@ const deleteUserController = new DeleteUserController();
 const selectHeroController = new SelectHeroController();
 const listUserChestController = new ListUserChestController();
 const reportController = new ReportController();
+const authenticateUserController = new AuthenticateUserController()
 
 usersRoutes.post('/', createUserController.handle)
-usersRoutes.get('/list', listAllUsersController.handle)
+usersRoutes.get('/list', ensureAuthenticated ,listAllUsersController.handle)
 usersRoutes.get('/report', reportController.handle)
 usersRoutes.get('/listChest/:id', listUserChestController.handle)
 usersRoutes.get('/find/:id', findByIDUserController.handle)
 usersRoutes.patch('/updateUser/:id', updateUserController.handle)
 usersRoutes.delete('/deleteUser/:id', deleteUserController.handle)
 usersRoutes.post('/selectHero/:id', selectHeroController.handle)
+usersRoutes.post('/authenticate', authenticateUserController.handle)
 export { usersRoutes }
