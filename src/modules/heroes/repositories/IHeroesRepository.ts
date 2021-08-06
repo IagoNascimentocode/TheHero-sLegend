@@ -1,5 +1,5 @@
 import { ICreateHeroesDTO } from "../dtos/ICreateHeroesDTO";
-import { Hero } from "../entities/Hero";
+import { Hero } from "../entities/hero";
 
 interface IHeroesRepository {
  create(data: ICreateHeroesDTO): Promise<void>;

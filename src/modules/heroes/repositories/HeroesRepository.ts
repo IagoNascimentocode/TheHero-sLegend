@@ -1,7 +1,7 @@
 import { getRepository, QueryBuilder, Repository } from "typeorm";
 import { IHeroesRepository } from "./IHeroesRepository";
 import { ICreateHeroesDTO } from "../dtos/ICreateHeroesDTO";
-import { Hero } from "../entities/Hero";
+import { Hero } from "../entities/hero";
 
 
 class HeroesRepository implements IHeroesRepository {

@@ -1,7 +1,7 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, OneToMany, OneToOne, PrimaryColumn, UpdateDateColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 import { Chests } from '../../chests/entities/Chests';
-import { Hero } from '../../heroes/entities/Hero';
+import { Hero } from '../../heroes/entities/hero';
 
 @Entity("users")
 class User {
