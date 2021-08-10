@@ -70,50 +70,5 @@ class HeroesRepository implements IHeroesRepository {
     await this.repository.delete(id)
   }
 
-  async basicAttack(player_1: string, player_2: string): Promise<Hero[]> {
-    const player1 = await this.repository.findOne(player_1);
-    const player2 = await this.repository.findOne(player_2);
-
-
-    if (player1.movementSpeed >= player2.movementSpeed) {
-
-      if (player2.armor <= 0) {
-
-        player2.life = player2.life - player1.damage
-      }
-
-      player2.armor = player2.armor - player1.damage
-
-    } else {
-
-      if (player1.armor <= 0) {
-        player1.armor = player1.life - player2.damage
-
-      }
-
-      player1.armor = player1.armor - player2.damage
-
-    }
-
-    await this.repository.createQueryBuilder()
-      .update()
-      .set({ armor: player1.armor })
-      .where("id = :player_1")
-      .setParameters({ player_1 })
-      .execute()
-
-    await this.repository.createQueryBuilder()
-      .update()
-      .set({ armor: player2.armor })
-      .where("id = :player_2")
-      .setParameters({ player_2 })
-      .execute()
-
-
-
-    return [player1, player2]
-    console.log(player2, player1)
-  }
-
 }
 export { HeroesRepository }

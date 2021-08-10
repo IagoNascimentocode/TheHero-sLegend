@@ -1,17 +1,18 @@
 import { inject, injectable } from "tsyringe";
 import { IHeroesRepository } from "../../heroes/repositories/IHeroesRepository";
 import { Hero } from "../../heroes/entities/Hero";
+import { IStadiumRepository } from "../repositories/IStadiumRepository";
 
 @injectable()
 class StadiumUseCase {
  constructor(
-  @inject("HeroesRepository")
-  private heroesRepository: IHeroesRepository
+  @inject("StadiumRepository")
+  private stadiumRepository: IStadiumRepository
  ) { }
 
- async basicAttack(player_1: string, player_2: string): Promise<Hero[]> {
+ async basicAttack(user_1: string, user_2: string): Promise<Hero[]> {
 
-  const result = await this.heroesRepository.basicAttack(player_1, player_2)
+  const result = await this.stadiumRepository.basicAttack(user_1, user_2)
 
 
   return result
