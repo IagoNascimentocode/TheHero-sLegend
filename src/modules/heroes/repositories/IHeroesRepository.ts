@@ -9,7 +9,6 @@ interface IHeroesRepository {
  listAllHeroes(): Promise<Hero[]>;
  addCash(hero_id: string, cash: number): Promise<void>;
  setUserInHero(user_id: string, hero_id: string): Promise<void>;
-
- basicAttack(player_1: string, player_2: string): Promise<void>;
+ basicAttack(player_1: string, player_2: string): Promise<Hero[]>
 }
 export { IHeroesRepository }
