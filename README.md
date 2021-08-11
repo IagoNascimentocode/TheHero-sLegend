@@ -64,6 +64,11 @@
  [ x ] - Should be able to save a hero in the database.<br>
  [   ] - Only an authenticated admin user can create a new hero.
 
+---
+### Import Heroes by .csv file  :
+ [ x ] - Should be able to create multiple heroes using a .csv file
+ [   ] - Only an authenticated admin user can import heroes.
+
  ---
  ### List All Heroes :
  [ x ] - Should be able list all heroes.<br>
