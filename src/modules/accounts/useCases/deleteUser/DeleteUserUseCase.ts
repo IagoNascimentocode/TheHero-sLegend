@@ -1,6 +1,6 @@
 import { inject, injectable } from "tsyringe";
+import { IChestsRepository } from "../../../chests/repositories/IChestsRepository";
 import { IHeroesRepository } from "../../../heroes/repositories/IHeroesRepository";
-import { FindByIDHeroUseCase } from "../../../heroes/useCases/findByIDHero/FindByIDHeroUseCase";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
 
 @injectable()
@@ -10,11 +10,13 @@ class DeleteUserUseCase {
   @inject("UsersRepository")
   private usersRepository: IUsersRepository,
   @inject("HeroesRepository")
-  private heroesRepository: IHeroesRepository
+  private heroesRepository: IHeroesRepository,
+  @inject("ChestsRepository")
+  private chestsRepository: IChestsRepository
  ) { }
 
  async execute(id: string): Promise<void> {
-  const user = this.usersRepository.findByID(id)
+  const user = await this.usersRepository.findByID(id)
 
   if (!user) {
    throw Error("User is not exists!")
@@ -29,6 +31,13 @@ class DeleteUserUseCase {
     await this.heroesRepository.deleteHero(hero.id)
 
    })
+  }
+  const chest = await this.chestsRepository.findChestsByID(user.chests_id)
+
+  if (chest) {
+
+   await this.chestsRepository.delete(chest.id)
+
   }
 
   await this.usersRepository.deleteUser(id)
