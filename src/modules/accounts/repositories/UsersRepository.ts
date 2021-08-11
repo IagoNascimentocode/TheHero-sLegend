@@ -2,7 +2,6 @@ import { createQueryBuilder, getRepository, Repository } from "typeorm";
 import { IUsersRepository } from "./IUsersRepository";
 import { ICreateUserDTO } from "../dtos/ICreateUserDTO";
 import { User } from "../entities/User";
-import { response } from "express";
 
 class UsersRepository implements IUsersRepository {
 
@@ -20,8 +19,8 @@ class UsersRepository implements IUsersRepository {
       name, email, password, birthDate, nationality, city, address, admin
     })
 
-
     await this.repository.save(user)
+
 
     return user
   }

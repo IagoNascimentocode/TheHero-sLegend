@@ -1,4 +1,5 @@
 import { container } from 'tsyringe';
+import '../../providers/index'
 
 import { IUsersRepository } from '../accounts/repositories/IUsersRepository';
 import { UsersRepository } from '../accounts/repositories/UsersRepository';

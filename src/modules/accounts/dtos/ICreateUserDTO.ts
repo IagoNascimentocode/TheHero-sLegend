@@ -7,7 +7,7 @@ interface ICreateUserDTO {
  nationality: string;
  city: string;
  address: string;
- birthDate: Date
+ birthDate: Date;
 }
 
 export { ICreateUserDTO }

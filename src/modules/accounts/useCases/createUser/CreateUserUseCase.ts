@@ -1,9 +1,8 @@
 import { hash } from "bcryptjs";
 import { inject, injectable } from "tsyringe";
-import { IChestsRepository } from "../../../chests/repositories/IChestsRepository";
 import { ICreateUserDTO } from "../../dtos/ICreateUserDTO";
+import { IChestsRepository } from "../../../chests/repositories/IChestsRepository";
 import { IUsersRepository } from "../../repositories/IUsersRepository";
-
 
 @injectable()
 class CreateUserUseCase {
@@ -12,7 +11,7 @@ class CreateUserUseCase {
   @inject("UsersRepository")
   private usersRepository: IUsersRepository,
   @inject("ChestsRepository")
-  private chestsRepository: IChestsRepository
+  private chestsRepository: IChestsRepository,
  ) { }
 
  async execute({ name, email, password, birthDate, nationality, city, address, admin = false }: ICreateUserDTO) {
@@ -29,8 +28,8 @@ class CreateUserUseCase {
    name, email, password: encryptedPassword, birthDate, nationality, city, address, admin,
   })
 
-  const chests = await this.chestsRepository.create({ user_id: user.id })
 
+  const chests = await this.chestsRepository.create({ user_id: user.id })
 
   this.usersRepository.updateChests_id(user.id, chests.id)
  }
