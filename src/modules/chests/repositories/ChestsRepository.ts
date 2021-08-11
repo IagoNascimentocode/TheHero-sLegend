@@ -19,6 +19,15 @@ class ChestsRepository implements IChestsRepository {
 
     return chest
   }
+  findChestsByID(id: string): Promise<Chests> {
+    const chest = this.repository.findOne(id)
+
+    return chest
+  }
+
+  async delete(id: string): Promise<void> {
+    await this.repository.delete(id)
+  }
 }
 
 export { ChestsRepository }
