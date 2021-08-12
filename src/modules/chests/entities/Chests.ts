@@ -25,14 +25,14 @@ class Chests {
  sword: Sword[];
 
  @Column()
- sword_id: string
+ sword_id: string;
 
  @OneToMany(() => Armor, armor => armor.id)
  @JoinColumn({ name: "armor_id" })
  armor: Armor[];
 
  @Column()
- armor_id: string
+ armor_id: string;
 
  @CreateDateColumn()
  created_at: Date;

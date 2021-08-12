@@ -10,9 +10,9 @@ class CreateSwordsUseCase {
   private swordsRepository: ISwordsRepository
  ) { }
 
- async execute({ name, damage, weight }: ICreateSwordsDTO): Promise<void> {
+ async execute({ name, damage, weight, price }: ICreateSwordsDTO): Promise<void> {
 
-  await this.swordsRepository.create({ name, damage, weight })
+  await this.swordsRepository.create({ name, damage, weight, price })
  }
 }
 

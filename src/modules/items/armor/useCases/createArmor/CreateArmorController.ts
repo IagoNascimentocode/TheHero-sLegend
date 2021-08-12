@@ -6,11 +6,11 @@ class CreateArmorController {
 
  async handle(request: Request, response: Response): Promise<Response> {
 
-  const { name, armor, weight } = request.body
+  const { name, armor, weight, price } = request.body
 
   const createArmorUseCase = container.resolve(CreateArmorUseCase)
 
-  await createArmorUseCase.execute({ name, armor, weight })
+  await createArmorUseCase.execute({ name, armor, weight, price })
 
   return response.status(201).send()
  }

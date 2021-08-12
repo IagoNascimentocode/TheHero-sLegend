@@ -10,9 +10,9 @@ class CreateArmorUseCase {
   private armorRepository: IArmorRepository
  ) { }
 
- async execute({ name, armor, weight }: ICreateArmorDTO): Promise<void> {
+ async execute({ name, armor, weight, price }: ICreateArmorDTO): Promise<void> {
 
-  await this.armorRepository.create({ name, armor, weight })
+  await this.armorRepository.create({ name, armor, weight, price })
  }
 }
 export { CreateArmorUseCase }

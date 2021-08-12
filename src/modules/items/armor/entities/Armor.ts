@@ -2,7 +2,7 @@ import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn,
 import { v4 as uuid } from "uuid"
 import { Chests } from "../../../chests/entities/Chests";
 
-@Entity("armor")
+@Entity("armors")
 class Armor {
 
  @PrimaryColumn()
@@ -16,6 +16,9 @@ class Armor {
 
  @Column()
  weight: number;
+
+ @Column()
+ price: number;
 
  @CreateDateColumn()
  created_at: Date;

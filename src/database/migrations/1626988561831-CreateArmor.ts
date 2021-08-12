@@ -5,7 +5,7 @@ export class CreateArmor1626988561831 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "armor",
+                name: "armors",
                 columns: [
                     {
                         name: "id",
@@ -18,11 +18,15 @@ export class CreateArmor1626988561831 implements MigrationInterface {
                     },
                     {
                         name: "armor",
-                        type: "number"
+                        type: "numeric"
                     },
                     {
                         name: "weight",
-                        type: "number",
+                        type: "numeric",
+                    },
+                    {
+                        name: "price",
+                        type: "numeric"
                     },
                     {
                         name: "created_at",
@@ -39,7 +43,7 @@ export class CreateArmor1626988561831 implements MigrationInterface {
         )
     }
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("armor")
+        await queryRunner.dropTable("armors")
     }
 
 }

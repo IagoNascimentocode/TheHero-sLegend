@@ -12,8 +12,8 @@ class ArmorRepository implements IArmorRepository {
   this.repository = getRepository(Armor)
 
  }
- async create({ name, armor, weight }: ICreateArmorDTO): Promise<void> {
-  const _armor = this.repository.create({ name, armor, weight })
+ async create({ name, armor, weight, price }: ICreateArmorDTO): Promise<void> {
+  const _armor = this.repository.create({ name, armor, weight, price })
 
   await this.repository.save(_armor)
  }

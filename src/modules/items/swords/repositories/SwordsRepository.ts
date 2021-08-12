@@ -12,8 +12,8 @@ class SwordsRepository implements ISwordsRepository {
   this.repository = getRepository(Sword)
  }
 
- async create({ name, damage, weight }: ICreateSwordsDTO): Promise<void> {
-  const sword = this.repository.create({ name, damage, weight })
+ async create({ name, damage, weight, price }: ICreateSwordsDTO): Promise<void> {
+  const sword = this.repository.create({ name, damage, weight, price })
 
   await this.repository.save(sword)
  }

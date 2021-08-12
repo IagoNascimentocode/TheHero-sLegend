@@ -1,7 +1,8 @@
 interface ICreateArmorDTO {
  name: string,
  armor: number,
- weight: number
+ weight: number,
+ price: number
 }
 
 export { ICreateArmorDTO }

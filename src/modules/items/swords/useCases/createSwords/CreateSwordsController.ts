@@ -4,11 +4,11 @@ import { CreateSwordsUseCase } from "./CreateSwordsUseCase";
 
 class CreateSwordsController {
  async handle(request: Request, response: Response): Promise<Response> {
-  const { name, damage, weight } = request.body;
+  const { name, damage, weight, price } = request.body;
 
   const createSwordsUseCase = container.resolve(CreateSwordsUseCase)
 
-  await createSwordsUseCase.execute({ name, damage, weight })
+  await createSwordsUseCase.execute({ name, damage, weight, price })
 
   return response.status(201).send()
  }

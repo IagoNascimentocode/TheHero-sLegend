@@ -59,6 +59,16 @@ export class CreateHeroes1625867654010 implements MigrationInterface {
                         isNullable: true
                     },
                     {
+                        name: "slot_from_sword",
+                        type: "uuid",
+                        isNullable: true
+                    },
+                    {
+                        name: "slot_from_armor",
+                        type: "uuid",
+                        isNullable: true
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
@@ -75,6 +85,22 @@ export class CreateHeroes1625867654010 implements MigrationInterface {
                         referencedTableName: "users",
                         referencedColumnNames: ["id"],
                         columnNames: ["user_id"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL"
+                    },
+                    {
+                        name: "FKSword",
+                        referencedTableName: "swords",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["slot_from_sword"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL"
+                    },
+                    {
+                        name: "FKArmor",
+                        referencedTableName: "armors",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["slot_from_armor"],
                         onDelete: "SET NULL",
                         onUpdate: "SET NULL"
                     }

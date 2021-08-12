@@ -61,7 +61,7 @@ export class CreateChests1627424810148 implements MigrationInterface {
                     },
                     {
                         name: "FKArmor",
-                        referencedTableName: "armor",
+                        referencedTableName: "armors",
                         referencedColumnNames: ["id"],
                         columnNames: ["armor_id"],
                         onDelete: "SET NULL",

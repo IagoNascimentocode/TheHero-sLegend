@@ -18,11 +18,15 @@ export class CreateSwords1626903806669 implements MigrationInterface {
                     },
                     {
                         name: "damage",
-                        type: "number"
+                        type: "numeric"
                     },
                     {
                         name: "weight",
-                        type: "number"
+                        type: "numeric"
+                    },
+                    {
+                        name: "price",
+                        type: "numeric"
                     },
                     {
                         name: "created_at",
