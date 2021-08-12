@@ -15,14 +15,14 @@ class Store {
  @Column()
  shelf_from_armor: string;
 
- @OneToMany(() => Armor, armor => armor)
+ @OneToMany(() => Armor, armor => armor.store)
  @JoinColumn({ name: "shelf_from_armor" })
  armor: Armor[];
 
  @Column()
  shelf_from_sword: string;
 
- @OneToMany(() => Sword, sword => sword)
+ @OneToMany(() => Sword, sword => sword.store)
  @JoinColumn({ name: "shelf_from_sword" })
  sword: Sword[];
 

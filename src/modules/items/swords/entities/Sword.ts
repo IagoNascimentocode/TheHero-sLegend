@@ -1,6 +1,6 @@
 import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuid } from "uuid"
-import { Chests } from "../../../chests/entities/Chests";
+import { Store } from "../../../stores/entities/Store";
 
 @Entity("swords")
 class Sword {
@@ -19,6 +19,13 @@ class Sword {
 
  @Column()
  price: number;
+
+ @Column()
+ store_id: number
+
+ @ManyToOne(() => Store)
+ @JoinColumn({ name: "store_id" })
+ store: Store;
 
  @CreateDateColumn()
  created_at: Date;

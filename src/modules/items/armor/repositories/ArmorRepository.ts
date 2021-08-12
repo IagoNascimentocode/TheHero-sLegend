@@ -5,30 +5,37 @@ import { IArmorRepository } from "./IArmorRepository"
 
 class ArmorRepository implements IArmorRepository {
 
- private repository: Repository<Armor>
+  private repository: Repository<Armor>
 
- constructor() {
+  constructor() {
 
-  this.repository = getRepository(Armor)
+    this.repository = getRepository(Armor)
 
- }
- async create({ name, armor, weight, price }: ICreateArmorDTO): Promise<void> {
-  const _armor = this.repository.create({ name, armor, weight, price })
+  }
+  async create({ name, armor, weight, price }: ICreateArmorDTO): Promise<void> {
+    const _armor = this.repository.create({ name, armor, weight, price })
 
-  await this.repository.save(_armor)
- }
+    await this.repository.save(_armor)
+  }
 
- async findAll(): Promise<Armor[]> {
-  const armor = await this.repository.find()
+  async findAll(): Promise<Armor[]> {
+    const armor = await this.repository.find()
 
-  return armor
- }
+    return armor
+  }
 
- async deleteArmor(id: string): Promise<void> {
-  await this.repository.delete(id)
- }
+  async deleteArmor(id: string): Promise<void> {
+    await this.repository.delete(id)
+  }
 
-
+  async setInShelf(store_id: number, armor_id: string): Promise<void> {
+    await this.repository.createQueryBuilder()
+      .update()
+      .set({ store_id })
+      .where("id = :armor_id")
+      .setParameters({ armor_id })
+      .execute()
+  }
 
 }
 

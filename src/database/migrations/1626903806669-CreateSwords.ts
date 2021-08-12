@@ -29,6 +29,11 @@ export class CreateSwords1626903806669 implements MigrationInterface {
                         type: "numeric"
                     },
                     {
+                        name: "store_id",
+                        type: "numeric",
+                        isNullable: true
+                    },
+                    {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
@@ -39,6 +44,17 @@ export class CreateSwords1626903806669 implements MigrationInterface {
                         default: "now()"
                     }
                 ],
+                foreignKeys: [
+                    {
+                        name: "FKStore",
+                        referencedTableName: "stores",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["store_id"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL"
+
+                    }
+                ]
             })
         )
     }
