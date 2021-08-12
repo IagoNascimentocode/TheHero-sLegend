@@ -15,9 +15,12 @@ import { ArmorRepository } from '../items/armor/repositories/ArmorRepository';
 
 import { IChestsRepository } from '../chests/repositories/IChestsRepository';
 import { ChestsRepository } from '../chests/repositories/ChestsRepository';
+
 import { IStadiumRepository } from '../stadium/repositories/IStadiumRepository';
 import { StadiumRepository } from '../stadium/repositories/StadiumRepository';
 
+import { IStoreRepository } from '../stores/repositories/IStoreRepository';
+import { StoreRepository } from '../stores/repositories/StoreRepository';
 
 container.registerSingleton<IUsersRepository>(
  "UsersRepository",
@@ -47,4 +50,9 @@ container.registerSingleton<IChestsRepository>(
 container.registerSingleton<IStadiumRepository>(
  "StadiumRepository",
  StadiumRepository
+)
+
+container.registerSingleton<IStoreRepository>(
+ "StoreRepository",
+ StoreRepository
 )
