@@ -115,10 +115,32 @@
 ---
 <br><br>
 
+## <strong>Stores</strong> 
+
+### Create Stores :
+ [ x ] - Should be able to save a stores in the database.<br>
+ [   ] - Only an authenticated admin user can delete a store.<br> 
+ 
+ ---
+
+### Add Items : 
+ [ x ] - Should be able to set an item on a shelf.<br>
+ [   ] - Only an authenticated admin user can set item a shelf
+
+ ---
+
+ ### List All Store Items :
+ [ x ] - Should be able list all items in the store
+
+---
+<br><br>
+
+
 ## <strong>Stadium</strong> 
 
+
 ### Basic Attack:
-[ x ] - Should be able find heroes by users ID
+[ x ] - Should be able find heroes by users ID.<br>
 [ x ] - The hero must be able to make a basic attack on another hero.<br> The attacking hero must have a movement faster than or equal to the hero receiving the attack to hit the attack.<br> If his movement is less he receives a counterattack.<br> It is only possible to remove a hero's health if his armor is less than zero. If the attack number is greater than the armor number, the armor breaks but the hero does not suffer damage in his life.
 
 [   ] - If your hero has a life less than 0 he must be deleted
