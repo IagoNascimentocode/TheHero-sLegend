@@ -1,7 +1,45 @@
 # <div align=center><strong>The Hero's Legend</strong></div>
 
 <br>
-<img src="http">
+
+
+## 🚀 Technologies
+
+
+The project was developed using the following technologies:
+
+ - [Npm](https://docs.npmjs.com/cli/v7/configuring-npm/install) - Package Manager
+ - [Yarn](https://classic.yarnpkg.com/en/docs/install/#debian-stable) - Package Manager
+ - [Java Script](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript) - Language
+ - [Type Script](https://www.typescriptlang.org/) - Language
+ - [NodeJS](https://nodejs.org/pt-br/download/) - Environment
+ - [Typeorm](https://typeorm.io/#/) - Database Orchestrator
+ - [Express](http://expressjs.com/en/guide/routing.html) - Framework 
+ ---
+<br>
+
+##  📁 How to download and run the project on a local machine 
+
+
+```bash
+    #Clone repository
+    $ git clone https://github.com/IagoNascimentocode/TheHero-sLegend.git
+
+    #Enter directory  
+    $ cd TheHero-sLegend
+
+    #Install dependencies
+    $ npm install 
+
+    #Start Project
+    $ yarn dev
+```
+<br>
+
+
+<br>
+
+# <div align=center><strong>🗺️ Routes and features</strong></div>
 
 ## <strong>Accounts</strong> 
 
